@@ -4,12 +4,7 @@
 //2. You should use recursion
 //3. Solution has to be in O(n)
 //5. Look for edge cases!
-
 function productOfArray(arr){
-    //Edge cases
-    if(!Array.isArray(arr)) return `${arr} is not an array.\n\n`;
-    if(arr.some(el => isNaN(el))) return `An element of ${arr} is not a number.\n\n`;
-
     let result = 1;
 
     const helper = (list) => {

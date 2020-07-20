@@ -9,7 +9,7 @@ function recursiveRange(num){
     //Edge cases
     if(isNaN(num)) return `${num} is not a number.\n\n`;
 
-   if(num <= 0) return `\nDONE!\n`;
+   if(num <= 0) return num;
 
    let result = 0;
    result += num;
