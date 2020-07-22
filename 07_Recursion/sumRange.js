@@ -6,20 +6,12 @@
 
 function sumRange(num){
     //Look for edge cases!
-    if(typeof num !== 'number'){
-        return '------------------------------------------------\nThis input was not a number. Try again.\n------------------------------------------------\n';
-    }
-    if(num < 1){
-        return '------------------------------------------------\nThis input was not valid. Try again.\n------------------------------------------------\n';
-    }
+    if(typeof num !== 'number' || num < 1) return `\nInput ${num} Was Not Valid.`;
 
     //1. Make base case
-    if(num === 1){
-        return 1;
-    }
-
+    if(num === 1) return 1;
     //2. Do your recursion and action
-    return num + sumRange(num-1);
+    return num + sumRange(--num);
 }
 
 console.log(sumRange(-9));
