@@ -14,23 +14,51 @@ let oddletter = [
     'EEE',
 ];
 
+
+// function getRandomIndex(arrLen) {
+//     return Math.floor(Math.random() * Math.floor(arrLen));
+// }
+
+// function getRandomOnce(arr) {
+//     let arrCopy = arr;
+//     // let index = arrayCopy.length > -1 ? getRandomIndex(arrCopy.length) : ;
+//     newRandomizedArray.push(arrCopy[index]);
+
+//     return newRandomizedArray;
+// }
+
+
 let newRandomizedArray = [];
+let testArray = [1,2,3];
+let copyArray = Array.from(testArray, (v) => v);
 
-function getRandomIndex(arrLen) {
-    return Math.floor(Math.random() * Math.floor(arrLen));
-}
+function test(newRandomizedArray, testArray, copyArray){
 
-function getRandomOnce(arr) {
-    let arrCopy = arr;
-    // let index = arrayCopy.length > -1 ? getRandomIndex(arrCopy.length) : ;
-    newRandomizedArray.push(arrCopy[index]);
+    if(copyArray.length === 0) copyArray = Array.from(testArray, (v) => v);
 
-    return newRandomizedArray;
-}
-
-function test(){
-    let testArray = [1,2,3];
-    for(let i = 0; i < testArray.length * 2; i++){
-        console.log(`\noriginal: ${testArray}\nrandomized: ${getRandomOnce(testArray)}`)
+    const getRandomIndex = (arrLen) => {
+        return Math.floor(Math.random() * Math.floor(arrLen));
     }
+
+    let temp = getRandomIndex(copyArray.length);
+    newRandomizedArray.push(copyArray[temp]);
+    copyArray.splice(temp, 1);
+    console.log(`newRandomizedArray: ${newRandomizedArray}   testArray: ${testArray}  copyArray: ${copyArray}`);
 }
+
+console.log('pass 1');
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+console.log('pass 2');
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+console.log('pass 3');
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+console.log('pass 4');
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
+test(newRandomizedArray, testArray, copyArray);
