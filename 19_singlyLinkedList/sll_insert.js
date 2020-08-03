@@ -33,28 +33,6 @@ class SinglyLinkedList {
         }
     }
 
-    reverse(){
-        let current = this.head;
-        //swap head with tail
-        this.head = this.tail;
-        this.tail = current;
-
-        //keep track of the previous of current, and the next of current
-        //to start, previous can be null and next can be undefined
-        let next;
-        let previous = null;
-
-        //loop and update previous, current, and next
-        for(let i = 0; i < this.length; i++){
-            next = current.next;
-            current.next = previous;
-            //swap previous with current and current.next with next
-            previous = current;
-            current = next;
-        }
-        return this;
-    }
-
     getAtIndex(index){
         if(index < 0 || index >= this.length) return undefined;
 
@@ -87,19 +65,6 @@ class SinglyLinkedList {
         this.length++;
 
         return true;
-    }
-
-    removeAt(index){
-        if(index < 0 || index >= this.length) return undefined;
-        if(index === this.length - 1) return this.pop();
-        if(index === 0) return this.shift();
-
-        let previous = this.getAtIndex(index - 1);
-        let found = previous.next;
-        previous.next = found.next;
-        this.length--;
-
-        return found;
     }
 
     shift() {
@@ -168,11 +133,23 @@ list.push('dos');
 list.push('tres');
 list.push('cuatro');
 list.push('cinco');
-
+ 
 console.log('\n************************');
 list.traverse();
-console.log('REVERSING...');
-list.reverse();
-console.log('REVERSED!!');
+console.log('INSERT AT INDEX 0');
+console.log(list.insert(0, 'siete'));
+console.log(list.getLength());
+console.log('INSERT AT INDEX 6');
+console.log(list.insert(6, 'diez'));
+list.traverse();
+console.log(list.getLength());
+console.log('INSERT AT INDEX -3');
+console.log(list.insert(-3, 'ocho'));
+console.log('INSERT AT INDEX 9');
+console.log(list.insert(9, 'nueve'));
+console.log('INSERT AT INDEX 2');
+console.log(list.insert(2, 'once'));
+console.log(list.getLength());
+// console.log(list);
 list.traverse();
 console.log('************************\n');

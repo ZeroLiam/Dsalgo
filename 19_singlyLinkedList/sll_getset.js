@@ -33,28 +33,6 @@ class SinglyLinkedList {
         }
     }
 
-    reverse(){
-        let current = this.head;
-        //swap head with tail
-        this.head = this.tail;
-        this.tail = current;
-
-        //keep track of the previous of current, and the next of current
-        //to start, previous can be null and next can be undefined
-        let next;
-        let previous = null;
-
-        //loop and update previous, current, and next
-        for(let i = 0; i < this.length; i++){
-            next = current.next;
-            current.next = previous;
-            //swap previous with current and current.next with next
-            previous = current;
-            current = next;
-        }
-        return this;
-    }
-
     getAtIndex(index){
         if(index < 0 || index >= this.length) return undefined;
 
@@ -73,33 +51,6 @@ class SinglyLinkedList {
 
         found.value = newValue;
         return true;
-    }
-
-    insert(index, newValue){
-        if(index < 0 || index > this.length) return false;
-        if(index === this.length) return !!this.push(newValue);
-        if(index === 0) return !!this.unshift(newValue);
-
-        let node = new Node(newValue);
-        let previous = this.getAtIndex(index - 1);
-        node.next = this.getAtIndex(index);
-        previous.next = node;
-        this.length++;
-
-        return true;
-    }
-
-    removeAt(index){
-        if(index < 0 || index >= this.length) return undefined;
-        if(index === this.length - 1) return this.pop();
-        if(index === 0) return this.shift();
-
-        let previous = this.getAtIndex(index - 1);
-        let found = previous.next;
-        previous.next = found.next;
-        this.length--;
-
-        return found;
     }
 
     shift() {
@@ -170,9 +121,27 @@ list.push('cuatro');
 list.push('cinco');
 
 console.log('\n************************');
-list.traverse();
-console.log('REVERSING...');
-list.reverse();
-console.log('REVERSED!!');
-list.traverse();
+console.log(list);
+console.log('GET AT INDEX 3');
+console.log(list.getAtIndex(3));
+console.log('GET AT INDEX -2');
+console.log(list.getAtIndex(-2));
+console.log('GET AT INDEX 6');
+console.log(list.getAtIndex(6));
+console.log('GET AT INDEX 0');
+console.log(list.getAtIndex(0));
 console.log('************************\n');
+console.log(list);
+
+console.log('\n************************');
+console.log(list);
+console.log('GET AT INDEX 0');
+console.log(list.getAtIndex(0));
+console.log('SET AT INDEX 0');
+console.log(list.setAtIndex(0, 'siete'));
+console.log('SET AT INDEX -3');
+console.log(list.setAtIndex(-3, 'siete'));
+console.log('SET AT INDEX 9');
+console.log(list.setAtIndex(9, 'siete'));
+console.log('************************\n');
+console.log(list);

@@ -33,28 +33,6 @@ class SinglyLinkedList {
         }
     }
 
-    reverse(){
-        let current = this.head;
-        //swap head with tail
-        this.head = this.tail;
-        this.tail = current;
-
-        //keep track of the previous of current, and the next of current
-        //to start, previous can be null and next can be undefined
-        let next;
-        let previous = null;
-
-        //loop and update previous, current, and next
-        for(let i = 0; i < this.length; i++){
-            next = current.next;
-            current.next = previous;
-            //swap previous with current and current.next with next
-            previous = current;
-            current = next;
-        }
-        return this;
-    }
-
     getAtIndex(index){
         if(index < 0 || index >= this.length) return undefined;
 
@@ -170,9 +148,22 @@ list.push('cuatro');
 list.push('cinco');
 
 console.log('\n************************');
+console.log(list.getLength());
 list.traverse();
-console.log('REVERSING...');
-list.reverse();
-console.log('REVERSED!!');
+console.log('REMOVE AT INDEX 0');
+console.log(list.removeAt(0));
+console.log(list.getLength());
+list.traverse();
+console.log('REMOVE AT INDEX 3');
+console.log(list.removeAt(3));
+console.log(list.getLength());
+list.traverse();
+console.log('REMOVE AT INDEX -3');
+console.log(list.removeAt(-3));
+console.log(list.getLength());
+list.traverse();
+console.log('REMOVE AT INDEX 9');
+console.log(list.removeAt(9));
+console.log(list.getLength());
 list.traverse();
 console.log('************************\n');
