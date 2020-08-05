@@ -200,6 +200,7 @@ class DoublyLinkedList {
     }
 }
 
+
 let list = new DoublyLinkedList();
 list.push('uno');
 list.push('dos');
@@ -208,121 +209,9 @@ list.push('cuatro');
 list.push('cinco');
 list.push('seis');
 
-/*
-//PUSH
-list.push('uno');
-list.push('dos');
-list.push('tres');
-list.push('cuatro');
-list.push('cinco');
-list.traverse();
-
-//POP
-console.log('\n************************');
-console.log('POPPED LAST ENTRY!!!');
-console.log(list.pop());
-console.log('************************\n');
-list.traverse();
-
-//SHIFT
-console.log('\n************************');
-console.log('head: ', list.getHead());
-list.traverse();
-console.log(list.shift());
-console.log('SHIFTED');
-console.log('head: ', list.getHead());
-console.log('************************\n');
-list.traverse();
-
-//UNSHIFT
-console.log('\n************************');
-console.log('head: ', list.getHead());
-list.traverse();
-console.log(list.unshift('seis'));
-console.log('UNSHIFTED');
-console.log('head: ', list.getHead());
-console.log('************************\n');
-list.traverse();
-
-//GET AND SET
-console.log('\n************************');
-console.log('GET AT INDEX 0');
-console.log(list.getAtIndex(0));
-console.log('SET AT INDEX 0');
-console.log(list.setAtIndex(0, 'ZERO'));
-console.log('GET AT INDEX 3');
-console.log(list.getAtIndex(3));
-console.log('SET AT INDEX 3');
-console.log(list.setAtIndex(3, 'THREE'));
-console.log('GET AT INDEX -2');
-console.log(list.getAtIndex(-2));
-console.log('SET AT INDEX -2');
-console.log(list.setAtIndex(-2, 'MINUS TWO'));
-console.log('GET AT INDEX 9');
-console.log(list.getAtIndex(9));
-console.log('SET AT INDEX 9');
-console.log(list.setAtIndex(9, 'NINE'));
-console.log('************************\n');
-list.traverse();
-
-//INSERT
-
-console.log('\n************************');
-console.log('GET AT INDEX 0');
-console.log(list.getAtIndex(0));
-console.log('INSERT AT INDEX 0');
-console.log(list.insert(0, 'ZERO'));
-console.log('NEW INDEX 0');
-console.log(`previous: ${list.getAtIndex(0).previous === null ? 'null' : list.getAtIndex(0).previous.value}  current: ${list.getAtIndex(0) === null ? 'null' : list.getAtIndex(0).value}  next: ${list.getAtIndex(0).next === null ? 'null' : list.getAtIndex(0).next.value}`);
-console.log('GET AT INDEX 3');
-console.log(list.getAtIndex(3));
-console.log('INSERT AT INDEX 3');
-console.log(list.insert(3, 'THREE'));
-console.log('NEW INDEX 3');
-console.log(`previous: ${list.getAtIndex(3).previous === null ? 'null' : list.getAtIndex(3).previous.value}  current: ${list.getAtIndex(3) === null ? 'null' : list.getAtIndex(3).value}  next: ${list.getAtIndex(3).next === null ? 'null' : list.getAtIndex(3).next.value}`);
-console.log('GET AT INDEX -2');
-console.log(list.getAtIndex(-2));
-console.log('INSERT AT INDEX -2');
-console.log(list.insert(-2, 'MINUS TWO'));
-console.log('GET AT INDEX 9');
-console.log(list.getAtIndex(9));
-console.log('INSERT AT INDEX 9');
-console.log(list.insert(9, 'NINE'));
-
-console.log(`GET AT INDEX ${list.getLength() - 1}`);
-console.log(list.getAtIndex(list.getLength() - 1));
-console.log(`INSERT AT INDEX ${list.getLength() - 1}`);
-console.log(list.insert(list.getLength() - 1, 'HELLO'));
-
-console.log(`NEW INDEX ${list.getLength() - 1}`);
-console.log(`previous: ${list.getAtIndex(list.getLength() - 1).previous === null ? 'null' : list.getAtIndex(list.getLength() - 1).previous.value}  current: ${list.getAtIndex(list.getLength() - 1) === null ? 'null' : list.getAtIndex(list.getLength() - 1).value}  next: ${list.getAtIndex(list.getLength() - 1).next === null ? 'null' : list.getAtIndex(list.getLength() - 1).next.value}`);
-console.log('************************\n');
-list.traverse();
-
-//REMOVE
-console.log('\n************************');
-console.log('GET AT INDEX 2');
-console.log(list.getAtIndex(2));
-console.log('REMOVE AT INDEX 2');
-console.log(list.remove(2));
-list.traverse();
-console.log('GET AT INDEX 0');
-console.log(list.getAtIndex(0));
-console.log('REMOVE AT INDEX 0');
-console.log(list.remove(0));
-list.traverse();
-console.log('GET AT INDEX 3');
-console.log(list.getAtIndex(3));
-console.log('REMOVE AT INDEX 3');
-console.log(list.remove(3));
-list.traverse();
-console.log('************************\n');
-
-//REVERSE
 console.log('\n************************');
 list.traverse();
 console.log('REVERSE');
 list.reverse();
 list.traverse();
 console.log('************************\n');
-*/
